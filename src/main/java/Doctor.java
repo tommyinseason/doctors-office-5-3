@@ -22,5 +22,11 @@ public class Doctor {
   public String getSpeciality() {
     return speciality;
   }
+  public static List<Doctor> all() {
+    String sql = "SELECT id, name FROM Doctors";
+    try(Connection con = DB.sql2o.open()) {
+      return con.createQuery(sql).executeAndFetch(Doctor.class);
+    }
+  }
 
 }

@@ -14,10 +14,19 @@ public class DoctorTest {
   @After
   public void tearDown() {
     try(Connection con = DB.sql2o.open()) {
-      String deleteTasksQuery = "DELETE FROM doctors *;";
-      String deleteCategoriesQuery = "DELETE FROM patients *;";
-      con.createQuery(deleteTasksQuery).executeUpdate();
-      con.createQuery(deleteCategoriesQuery).executeUpdate();
+      String deleteDoctorsQuery = "DELETE FROM doctors *;";
+      String deletePatientsQuery = "DELETE FROM patients *;";
+      con.createQuery(deleteDoctorsQuery).executeUpdate();
+      con.createQuery(deletePatientsQuery).executeUpdate();
     }
   }
+  @Test
+  public void getName_DoctorInstantiatesWithName_String() {
+    Doctor myDoctor = new Doctor("Phil Collins", "Lobotomist");
+    assertEquals("Phil Collins", myDoctor.getName());
+  }
+  @Test
+   public void all_emptyAtFirst() {
+     assertEquals(Doctor.all().size(), 0);
+   }
 }
