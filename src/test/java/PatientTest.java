@@ -29,7 +29,7 @@ public class PatientTest {
   public void getNameandGetBirthday_patientInstantiatesWithNameandBirthday_String() {
     Patient myPatient = new Patient("Phil Collins", "05-05-1982", 1);
     assertEquals("Phil Collins", myPatient.getName());
-    assertEquals("05-05-1982", myPatient.getBirthday());
+    assertEquals("05-05-1982", myPatient.getBirthdate());
   }
   @Test
    public void all_emptyAtFirst() {

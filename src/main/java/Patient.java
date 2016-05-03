@@ -4,12 +4,12 @@ import org.sql2o.*;
 public class Patient {
   private int id;
   private String name;
-  private String birthday;
+  private String birthdate;
   private int doctorId;
 
-  public Patient (String name, String birthday, int doctorId)  {
+  public Patient (String name, String birthdate, int doctorId)  {
     this.name = name;
-    this.birthday = birthday;
+    this.birthdate = birthdate;
     this.doctorId = doctorId;
   }
 
@@ -17,8 +17,8 @@ public class Patient {
     return name;
   }
 
-  public String getBirthday() {
-    return birthday;
+  public String getBirthdate() {
+    return birthdate;
   }
 
   public int getDoctorId() {
